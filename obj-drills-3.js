@@ -154,12 +154,12 @@
 
 //Factory Functions with LOTR
 
-function CreateCharacter(name, nickname, race, origin, attack, defense) {
+function CreateCharacter(name, nickname, race, origin, weapon, attack, defense) {
 
   return {
-    name, nickname, race, origin, attack, defense,
+    name, nickname, race, origin, attack, defense, weapon,
     describe: function() {
-      return `${this.name} is a ${this.race} from ${this.origin}`;
+      return `${this.name} is a ${this.race} from ${this.origin} who uses ${weapon}`;
     },
     evaluateFight: function(character) {
       if (character.attack > this.defense && this.attack > character.defense) {
@@ -175,27 +175,37 @@ function CreateCharacter(name, nickname, race, origin, attack, defense) {
   };
 }
 
-const gandalf = CreateCharacter('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', 10, 6);
-const bilbo = CreateCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'The Shire', 2, 1);
-const frodo = CreateCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2);
-const aragorn = CreateCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunnedain', 6, 8);
-const legolas = CreateCharacter('Legolas', 'legolas', 'Elf', 'Woodland Realm', 8, 5);
+const gandalf = CreateCharacter('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', 'wizard staff', 10, 6);
+const bilbo = CreateCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'The Shire', 'the Ring', 2, 1);
+const frodo = CreateCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 'String and Barrow Blade', 3, 2);
+const aragorn = CreateCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunnedain', 'Anduril', 6, 8);
+const legolas = CreateCharacter('Legolas', 'legolas', 'Elf', 'Woodland Realm', 'Bow and Arrow', 8, 5);
 // console.log(gandalf);
 // console.log(bilbo);
 // console.log(aragorn);
 // console.log(gandalf.describe());
 // console.log(aragorn.describe());
 const characters = [
-  CreateCharacter('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', 10, 6),
-  CreateCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'The Shire', 2, 1),
-  CreateCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2),
-  CreateCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunnedain', 6, 8),
-  CreateCharacter('Legolas', 'legolas', 'Elf', 'Woodland Realm', 8, 5),
+  CreateCharacter('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', 'a wizard staff', 10, 6),
+  CreateCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'The Shire', 'the Ring', 2, 1),
+  CreateCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 'a String and Barrow Blade', 3, 2),
+  CreateCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunnedain', 'Anduril', 6, 8),
+  CreateCharacter('Legolas', 'legolas', 'Elf', 'Woodland Realm', 'Bow and Arrow', 8, 5),
 ];
 
 characters.push(CreateCharacter('Arwen Undomiel', 'arwen', 'Half Elf', 'Rivendell', 4, 3));
+// console.log(characters);
 
-console.log(characters);
-console.log(characters.find(char => char.nickname === 'aragorn'));
+if ((characters.find(char => char.nickname === 'aragorn')));
+{
+  console.log(aragorn.describe());
+  //This needs to be fixed to be mutable
+}
+
+const hobbitRace = characters.filter(char => char.race === 'Hobbit');
+console.log(hobbitRace);
+
+const highAttack = characters.filter(char => char.attack > 5);
+console.log(highAttack);
 
 // console.log(frodo.evaluateFight(aragorn));
