@@ -118,73 +118,84 @@
 //Object cipher
 
 
-function decode2(enc) {
+// function decode2(enc) {
  
-  const splitString  = enc.split(' ');
-  for (let i = 0; i < splitString.length; i++){ 
-    if (splitString[i][0] === 'a'){
-      splitString[i] = splitString[i][cipher.a - 1];
-    }
-    else if (splitString[i][0] === 'b'){
-      splitString[i] = splitString[i][cipher.a];
-    }
-    else if (splitString[i][0] === 'c'){
-      splitString[i] = splitString[i][cipher.b];
-    } 
-    else if (splitString[i][0] === 'd'){
-      splitString[i] = splitString[i][cipher.c];
-    }
-    else {
-      splitString[i] = " ";
-    }
-  }
-  console.log(splitString);
-  const decodedString = splitString.join('');
-  return decodedString;
-}
+//   const splitString  = enc.split(' ');
+//   for (let i = 0; i < splitString.length; i++){ 
+//     if (splitString[i][0] === 'a'){
+//       splitString[i] = splitString[i][cipher.a - 1];
+//     }
+//     else if (splitString[i][0] === 'b'){
+//       splitString[i] = splitString[i][cipher.a];
+//     }
+//     else if (splitString[i][0] === 'c'){
+//       splitString[i] = splitString[i][cipher.b];
+//     } 
+//     else if (splitString[i][0] === 'd'){
+//       splitString[i] = splitString[i][cipher.c];
+//     }
+//     else {
+//       splitString[i] = " ";
+//     }
+//   }
+//   console.log(splitString);
+//   const decodedString = splitString.join('');
+//   return decodedString;
+// }
 
-const cipher = {
-  a: 2,
-  b: 3,
-  c: 4,
-  d: 5
-};
+// const cipher = {
+//   a: 2,
+//   b: 3,
+//   c: 4,
+//   d: 5
+// };
 
-console.log(decode2('craft block argon meter bells brown croon droop'));
+// console.log(decode2('craft block argon meter bells brown croon droop'));
 
 //Factory Functions with LOTR
 
-// function CreateCharacter(name, nickname, race, origin, attack, defense) {
+function CreateCharacter(name, nickname, race, origin, attack, defense) {
 
-//   return {
-//     name, nickname, race, origin, attack, defense,
-//     describe: function() {
-//       return `${this.name} is a ${this.race} from ${this.origin}`;
-//     },
-//     evaluateFight: function(character) {
-//       if (character.attack > this.defense && this.attack > character.defense) {
-//         return `Your opponent takes ${this.attack - character.defense} damage and you receive ${character.attack - this.defense}`;
-//       }
-//       else if (character.defense > this.attack){
-//         return `Your opponent takes no damage and you receive ${character.attack - this.defense} damage`;
-//       }
-//       else {
-//         return `Your opponent takes ${this.attack - character.defense} damage and you receive no damage`;
-//       }
-//     },
-//   };
-// }
+  return {
+    name, nickname, race, origin, attack, defense,
+    describe: function() {
+      return `${this.name} is a ${this.race} from ${this.origin}`;
+    },
+    evaluateFight: function(character) {
+      if (character.attack > this.defense && this.attack > character.defense) {
+        return `Your opponent takes ${this.attack - character.defense} damage and you receive ${character.attack - this.defense}`;
+      }
+      else if (character.defense > this.attack){
+        return `Your opponent takes no damage and you receive ${character.attack - this.defense} damage`;
+      }
+      else {
+        return `Your opponent takes ${this.attack - character.defense} damage and you receive no damage`;
+      }
+    },
+  };
+}
 
-// const gandalf = CreateCharacter('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', 10, 6);
-// const bilbo = CreateCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'The Shire', 2, 1);
-// const frodo = CreateCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2);
-// const aragorn = CreateCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunnedain', 6, 8);
-// const legolas = CreateCharacter('Legolas', 'legolas', 'Elf', 'Woodland Realm', 8, 5);
-// // console.log(gandalf);
-// // console.log(bilbo);
-// // console.log(aragorn);
-// // console.log(gandalf.describe());
-// // console.log(aragorn.describe());
-// const characters = [];
+const gandalf = CreateCharacter('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', 10, 6);
+const bilbo = CreateCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'The Shire', 2, 1);
+const frodo = CreateCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2);
+const aragorn = CreateCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunnedain', 6, 8);
+const legolas = CreateCharacter('Legolas', 'legolas', 'Elf', 'Woodland Realm', 8, 5);
+// console.log(gandalf);
+// console.log(bilbo);
+// console.log(aragorn);
+// console.log(gandalf.describe());
+// console.log(aragorn.describe());
+const characters = [
+  CreateCharacter('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', 10, 6),
+  CreateCharacter('Bilbo Baggins', 'bilbo', 'Hobbit', 'The Shire', 2, 1),
+  CreateCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2),
+  CreateCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunnedain', 6, 8),
+  CreateCharacter('Legolas', 'legolas', 'Elf', 'Woodland Realm', 8, 5),
+];
+
+characters.push(CreateCharacter('Arwen Undomiel', 'arwen', 'Half Elf', 'Rivendell', 4, 3));
+
+console.log(characters);
+console.log(characters.find(char => char.nickname === 'aragorn'));
 
 // console.log(frodo.evaluateFight(aragorn));
