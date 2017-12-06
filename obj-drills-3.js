@@ -40,4 +40,35 @@ console.log(hobbiton.meals[3]);
 
 //Arrays of objects
 
+const starWars = {
+  name: 'Luke',
+  jobTitle: 'Jedi'
+};
+
+const starWars2 = {
+  name: 'Han Solo',
+  jobTitle: 'Legendary Smuggler'
+};
+
+const starWars3 = {
+  name: 'Leia',
+  jobTitle: 'Resistance Leader'
+};
+
+const starWars4 = {
+  name: 'Chewie',
+  jobTitle: 'Best 2nd Mate'
+};
+
+function storeTheChars() {
+  let mainCast = [];
+  mainCast.push(starWars, starWars2, starWars3, starWars4);
+  console.log(mainCast.map(char => `${char.name}: ${char.jobTitle}`));
+}
+
+storeTheChars();
+
+//Properties that aren't there
+
+
 
