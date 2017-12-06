@@ -92,6 +92,14 @@ function enrollInSummerSchool(students) {
   });
 }
 
+//Spread operator
+function enrollInSummerSchool(students) {
+  return students.map(student => {
+    return {...students, student}
+    };
+  });
+}
+
 
 /* From here down, you are not expected to understand.... for now :)
   Nothing to see here!
