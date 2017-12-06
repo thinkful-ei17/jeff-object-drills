@@ -32,5 +32,12 @@ for (let key in myObj) {
 
 //Arrays in objects
 
+const hobbiton = {
+  meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']
+};
+
+console.log(hobbiton.meals[3]);
+
+//Arrays of objects
 
 
