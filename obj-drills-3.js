@@ -22,7 +22,15 @@ const myObj = {
   foo:  'bar',
   bar:  'foo',
   fum:  'hum',
-  quux: 
-  spam:
+  quux: 'flux',
+  spam: 'ahhh'
 };
+
+for (let key in myObj) {
+  console.log(key, myObj[key]);
+}
+
+//Arrays in objects
+
+
 
