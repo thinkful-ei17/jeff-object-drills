@@ -58,7 +58,7 @@ testIt();
 
 
 
-//Enroll in Summer School
+// Enroll in Summer School
 
 const studentData = [
   {
@@ -79,18 +79,19 @@ const studentData = [
 ];
 
 // console.log(data.map(student => `${student.name}: ${student.name}`));
+// return data.map(student => `${student.name}: ${student.grade}`);
+
 
 function enrollInSummerSchool(students) {
   return students.map(student => {
-    console.log({
+    return {
       name: `${student.name}`,
-      status: 'In Summer School',
-      course: `${student.course}`,
-    });
+      status: 'In Summer school',
+      course: `${student.course}`
+    };
   });
 }
 
-enrollInSummerSchool(studentData);
 
 /* From here down, you are not expected to understand.... for now :)
   Nothing to see here!
